@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research & M.Ed Student Resource Hub | St. Joseph College</title>
+<style>
+:root{
+  --navy:#102a43;--navy2:#173f5f;--teal:#0e8b83;--mint:#e8f7f4;
+  --gold:#e8b85b;--ink:#233746;--muted:#657789;--paper:#f4f8fb;--white:#fff;
+  --line:#e0e9ef;--shadow:0 12px 32px rgba(16,42,67,.09)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#102a43 0%,#17536b 58%,#0e8b83 100%);color:white;padding:42px 22px 36px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.12);border-radius:50%;width:360px;height:360px;right:-80px;top:-180px}
+.hero:after{width:230px;height:230px;right:120px;top:90px}
+.wrap{width:min(1160px,100%);margin:auto;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:7px 13px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.08;margin:18px 0 12px;max-width:850px;letter-spacing:-.035em}
+.hero p{color:#e0edf3;max-width:760px;margin:0;font-size:1.05rem}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.pill{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);border-radius:12px;padding:9px 13px;font-size:.88rem}
+.topnav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.navinner{width:min(1160px,100%);margin:auto;display:flex;align-items:center;gap:8px;overflow-x:auto;padding:10px 16px}
+.navinner a{white-space:nowrap;padding:9px 12px;border-radius:9px;color:#385064;font-size:.9rem;font-weight:650}
+.navinner a:hover{background:var(--mint);color:var(--teal)}
+main{width:min(1160px,100%);margin:0 auto;padding:28px 18px 50px}
+.welcome{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;margin-bottom:24px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.welcome h2{margin:0 0 8px;font-size:1.25rem;color:var(--navy)}
+.welcome p{margin:0;color:var(--muted)}
+.quote{background:linear-gradient(145deg,#e8f7f4,#f9fcff);border-color:#ccece6;display:flex;flex-direction:column;justify-content:center}
+.quote strong{color:var(--teal);font-size:1.05rem}
+.quote span{color:#557078;font-size:.9rem;margin-top:7px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:32px 2px 15px}
+.section-head h2{margin:0;color:var(--navy);font-size:1.45rem;letter-spacing:-.02em}
+.section-head p{margin:3px 0 0;color:var(--muted);font-size:.93rem}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 20px}
+.searchbox{flex:1;min-width:220px;position:relative}
+.searchbox input{width:100%;border:1px solid #d5e1e9;border-radius:13px;padding:14px 15px 14px 43px;background:white;font:inherit;outline:none}
+.searchbox input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,139,131,.12)}
+.searchicon{position:absolute;left:15px;top:12px;font-size:1.1rem}
+select{border:1px solid #d5e1e9;border-radius:13px;padding:12px 14px;background:#fff;font:inherit;color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{display:flex;flex-direction:column;background:white;border:1px solid var(--line);border-radius:18px;padding:19px;min-height:220px;box-shadow:0 5px 16px rgba(16,42,67,.035);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#b9ddd9}
+.cardtop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.icon{width:47px;height:47px;display:grid;place-items:center;border-radius:14px;background:var(--mint);font-size:1.5rem;flex-shrink:0}
+.tag{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:#e7f7f4;border-radius:999px;padding:6px 9px}
+.card h3{font-size:1.08rem;line-height:1.3;color:var(--navy);margin:15px 0 7px}
+.card p{font-size:.9rem;color:var(--muted);margin:0 0 17px}
+.card .action{margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-weight:750;font-size:.91rem}
+.card .action:hover{color:#075e59}
+.card small{font-size:.75rem;color:#8796a2;margin-top:8px}
+.notice{border-left:4px solid var(--gold);background:#fffaf0;padding:14px 16px;border-radius:0 12px 12px 0;color:#6c5a37;font-size:.9rem;margin-top:20px}
+.quicklinks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.quick{background:white;border:1px solid var(--line);border-radius:15px;padding:15px;display:flex;align-items:center;gap:11px;font-weight:700;color:var(--navy)}
+.quick:hover{border-color:#b9ddd9;background:#fafffe}
+.quick span:first-child{font-size:1.35rem}
+footer{background:var(--navy);color:#dbe8f0;padding:28px 18px;text-align:center}
+footer strong{color:#fff}
+footer p{margin:5px 0;font-size:.88rem}
+.hidden{display:none!important}
+#noResults{display:none;padding:28px;text-align:center;color:var(--muted);background:white;border:1px dashed #cbd9e2;border-radius:16px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome{grid-template-columns:1fr}.quicklinks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hero{padding:30px 18px}.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.panel{padding:18px}.quicklinks{grid-template-columns:1fr 1fr}}
+@media print{.topnav,.searchrow,.action{display:none!important}.hero{background:#fff;color:#102a43;padding:15px}.hero p{color:#333}.card{break-inside:avoid;box-shadow:none}.grid{grid-template-columns:repeat(2,1fr)}body{background:#fff}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <div class="eyebrow">📚 Academic Support • Digital Resources</div>
+  <h1>Research &amp; M.Ed Student Resource Hub</h1>
+  <p>St. Joseph College of Teacher Education for Women, Ernakulam — a curated gateway to research theses, previous question papers, scholarly journals, e-books and essential academic tools.</p>
+  <div class="hero-meta">
+   <div class="pill">🎓 For M.Ed Students</div>
+   <div class="pill">🔎 For Research Scholars</div>
+   <div class="pill">🌐 Digital Learning Resources</div>
+  </div>
+ </div>
+</header>
+<nav class="topnav"><div class="navinner">
+ <a href="#resources">All Resources</a><a href="#theses">Theses &amp; Dissertations</a><a href="#journals">Journals</a><a href="#books">Online Books</a><a href="#tools">Research Tools</a><a href="#quick">Quick Links</a>
+</div></nav>
+<main>
+ <section class="welcome">
+  <div class="panel">
+   <h2>Welcome, Josephite Researchers!</h2>
+   <p>Use this page as your starting point for academic inquiry, literature review, research writing and examination preparation. Select a resource card to open the relevant catalogue or online service. Some subscribed resources may require college or N-LIST access.</p>
+  </div>
+  <div class="panel quote">
+   <strong>“Let knowledge be promoted more and more, so that every human mind be illumined.”</strong>
+   <span>— SJCTEW Library</span>
+  </div>
+ </section>
+
+ <section id="resources">
+  <div class="section-head"><div><h2>Explore the Resource Collection</h2><p>Search by resource name, topic or purpose.</p></div></div>
+  <div class="searchrow">
+   <div class="searchbox"><span class="searchicon">⌕</span><input id="resourceSearch" type="search" placeholder="Search theses, question papers, journals, books..." aria-label="Search resources"></div>
+   <select id="categoryFilter" aria-label="Filter by category">
+    <option value="all">All categories</option><option value="papers">Question Papers</option><option value="theses">Theses</option><option value="journals">Journals</option><option value="books">Online Books</option><option value="tools">Research Tools</option><option value="library">Library Services</option>
+   </select>
+  </div>
+
+  <div class="grid" id="resourceGrid">
+   <article class="card" data-category="papers" data-search="previous question papers b.ed m.ed examination university exams question paper">
+    <div class="cardtop"><div class="icon">📝</div><span class="tag">Exams</span></div><h3>Previous Question Papers</h3><p>Find previous examination papers and practice questions for preparation and revision.</p><a class="action" href="https://sites.google.com/view/sjctewlibrary/josephites-resource-hub/question-papers" target="_blank" rel="noopener">Open Question Papers ↗</a><small>Official SJCTEW Library resource page</small>
+   </article>
+   <article class="card" data-category="theses" data-search="m.ed thesis catalogue dissertation education research thesis 1">
+    <div class="cardtop"><div class="icon">📘</div><span class="tag">Thesis</span></div><h3>M.Ed Thesis — Collection 1</h3><p>Browse M.Ed dissertations for topic selection, research design and literature review.</p><a class="action" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener">Open Thesis Catalogue ↗</a><small>Thesis catalogue / Librarika</small>
+   </article>
+   <article class="card" data-category="theses" data-search="m.ed thesis collection 2 dissertation education">
+    <div class="cardtop"><div class="icon">📗</div><span class="tag">Thesis</span></div><h3>M.Ed Thesis — Collection 2</h3><p>Use the thesis catalogue to locate additional M.Ed research works by title, author or subject.</p><a class="action" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener">Browse M.Ed Theses ↗</a><small>Replace this link if you have a separate Collection 2 page</small>
+   </article>
+   <article class="card" data-category="theses" data-search="m.ed thesis collection 3 dissertation education">
+    <div class="cardtop"><div class="icon">📙</div><span class="tag">Thesis</span></div><h3>M.Ed Thesis — Collection 3</h3><p>Continue exploring the M.Ed thesis collection for related studies and references.</p><a class="action" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener">Browse M.Ed Theses ↗</a><small>Replace this link if you have a separate Collection 3 page</small>
+   </article>
+   <article class="card" data-category="theses" data-search="ph.d phd thesis doctoral dissertation education shodhganga institutional repository">
+    <div class="cardtop"><div class="icon">🎓</div><span class="tag">Research</span></div><h3>Ph.D. Theses</h3><p>Discover doctoral theses and dissertations for advanced research and reference.</p><a class="action" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener">Open Thesis Catalogue ↗</a><small>Institutional thesis catalogue</small>
+   </article>
+   <article class="card" data-category="journals" data-search="online journals scholarly peer reviewed research education doaj eric google scholar">
+    <div class="cardtop"><div class="icon">📰</div><span class="tag">Journals</span></div><h3>Online Journals &amp; Articles</h3><p>Search peer-reviewed publications, education research and scholarly articles.</p><a class="action" href="https://doaj.org/" target="_blank" rel="noopener">Explore Open Journals ↗</a><small>Directory of Open Access Journals</small>
+   </article>
+   <article class="card" data-category="books" data-search="online books ebooks open access academic books doab oapen">
+    <div class="cardtop"><div class="icon">📚</div><span class="tag">E-Books</span></div><h3>Online Books &amp; E-Books</h3><p>Access open academic books and reference material for coursework and research.</p><a class="action" href="https://www.doabooks.org/" target="_blank" rel="noopener">Explore Open Books ↗</a><small>Directory of Open Access Books</small>
+   </article>
+   <article class="card" data-category="theses" data-search="shodhganga indian theses dissertations research repository">
+    <div class="cardtop"><div class="icon">🏛️</div><span class="tag">Repository</span></div><h3>Shodhganga — Indian Theses</h3><p>Search theses and dissertations submitted to Indian universities.</p><a class="action" href="https://shodhganga.inflibnet.ac.in/" target="_blank" rel="noopener">Search Shodhganga ↗</a><small>INFLIBNET institutional repository</small>
+   </article>
+   <article class="card" data-category="library" data-search="web opac library catalogue books search sjctew koha librarika">
+    <div class="cardtop"><div class="icon">🔎</div><span class="tag">Library</span></div><h3>Library Catalogue / Web OPAC</h3><p>Search the library catalogue for books, bibliographic records and available holdings.</p><a class="action" href="https://sjcte-opac.kohasupport.in/" target="_blank" rel="noopener">Open Web OPAC ↗</a><small>Library catalogue service</small>
+   </article>
+   <article class="card" data-category="library" data-search="sjctew digital library dspace institutional repository faculty e-content question papers">
+    <div class="cardtop"><div class="icon">💻</div><span class="tag">Digital Library</span></div><h3>SJCTEW Digital Repository</h3><p>Explore institutional digital content, faculty e-content and academic resources.</p><a class="action" href="https://sjctew.digitalrepository.in/" target="_blank" rel="noopener">Open Digital Repository ↗</a><small>Institutional repository</small>
+   </article>
+   <article class="card" data-category="journals" data-search="n-list inflibnet e resources journals ebooks database college subscription">
+    <div class="cardtop"><div class="icon">🌐</div><span class="tag">E-Resources</span></div><h3>N-LIST E-Resources</h3><p>Access subscribed scholarly journals and e-books with your authorized institutional credentials.</p><a class="action" href="https://nlist.inflibnet.ac.in/" target="_blank" rel="noopener">Open N-LIST ↗</a><small>Access depends on membership and login</small>
+   </article>
+   <article class="card" data-category="tools" data-search="google scholar academic search citations research articles">
+    <div class="cardtop"><div class="icon">🔬</div><span class="tag">Research Tool</span></div><h3>Google Scholar</h3><p>Find scholarly literature, citations, theses, books and conference papers.</p><a class="action" href="https://scholar.google.com/" target="_blank" rel="noopener">Search Scholar ↗</a><small>Scholarly search engine</small>
+   </article>
+   <article class="card" data-category="tools" data-search="eric education resources information center educational research articles">
+    <div class="cardtop"><div class="icon">🧠</div><span class="tag">Education</span></div><h3>ERIC — Education Research</h3><p>Search education-focused journal articles, reports and research records.</p><a class="action" href="https://eric.ed.gov/" target="_blank" rel="noopener">Explore ERIC ↗</a><small>Education Resources Information Center</small>
+   </article>
+   <article class="card" data-category="tools" data-search="citation reference management zotero research bibliography">
+    <div class="cardtop"><div class="icon">✍️</div><span class="tag">Writing</span></div><h3>Zotero — Reference Manager</h3><p>Collect, organize and cite research sources while preparing assignments and theses.</p><a class="action" href="https://www.zotero.org/" target="_blank" rel="noopener">Explore Zotero ↗</a><small>Free reference management tool</small>
+   </article>
+   <article class="card" data-category="tools" data-search="open access books oapen academic monographs">
+    <div class="cardtop"><div class="icon">📖</div><span class="tag">E-Books</span></div><h3>OAPEN Library</h3><p>Discover peer-reviewed open-access books, especially scholarly monographs.</p><a class="action" href="https://www.oapen.org/" target="_blank" rel="noopener">Browse OAPEN ↗</a><small>Open-access academic books</small>
+   </article>
+   <article class="card" data-category="library" data-search="sjctew library home official library resources">
+    <div class="cardtop"><div class="icon">🏫</div><span class="tag">College</span></div><h3>SJCTEW Library Home</h3><p>Visit the library portal for additional services, forms and student resources.</p><a class="action" href="https://sites.google.com/view/sjctewlibrary/" target="_blank" rel="noopener">Visit Library Portal ↗</a><small>Official library Google Site</small>
+   </article>
+  </div>
+  <div id="noResults">No matching resources found. Try another search term or choose “All categories”.</div>
+  <div class="notice"><strong>Access note:</strong> Some resources provide full text openly, while others may require college network access, N-LIST membership or an authorized login. Use materials according to each publisher's access and copyright conditions.</div>
+ </section>
+
+ <section id="theses">
+  <div class="section-head"><div><h2>Theses &amp; Dissertations</h2><p>Research collections and repositories.</p></div></div>
+  <div class="quicklinks">
+   <a class="quick" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener"><span>📚</span><span>M.Ed Thesis Catalogue</span></a>
+   <a class="quick" href="https://sjcekm.librarika.com/" target="_blank" rel="noopener"><span>🎓</span><span>Ph.D. Thesis Catalogue</span></a>
+   <a class="quick" href="https://shodhganga.inflibnet.ac.in/" target="_blank" rel="noopener"><span>🇮🇳</span><span>Shodhganga</span></a>
+   <a class="quick" href="https://sjctew.digitalrepository.in/" target="_blank" rel="noopener"><span>🗂️</span><span>Digital Repository</span></a>
+  </div>
+ </section>
+ <section id="journals">
+  <div class="section-head"><div><h2>Journals &amp; Articles</h2><p>Find research literature for your review of related studies.</p></div></div>
+  <div class="quicklinks">
+   <a class="quick" href="https://doaj.org/" target="_blank" rel="noopener"><span>📰</span><span>DOAJ</span></a>
+   <a class="quick" href="https://eric.ed.gov/" target="_blank" rel="noopener"><span>🎒</span><span>ERIC Education</span></a>
+   <a class="quick" href="https://scholar.google.com/" target="_blank" rel="noopener"><span>🔎</span><span>Google Scholar</span></a>
+   <a class="quick" href="https://nlist.inflibnet.ac.in/" target="_blank" rel="noopener"><span>🌐</span><span>N-LIST</span></a>
+  </div>
+ </section>
+ <section id="books">
+  <div class="section-head"><div><h2>Online Books &amp; Open Learning</h2><p>Open-access books and educational resources.</p></div></div>
+  <div class="quicklinks">
+   <a class="quick" href="https://www.doabooks.org/" target="_blank" rel="noopener"><span>📘</span><span>DOAB</span></a>
+   <a class="quick" href="https://www.oapen.org/" target="_blank" rel="noopener"><span>📗</span><span>OAPEN Library</span></a>
+   <a class="quick" href="https://nroer.gov.in/" target="_blank" rel="noopener"><span>🎥</span><span>NROER</span></a>
+   <a class="quick" href="https://www.gutenberg.org/" target="_blank" rel="noopener"><span>📜</span><span>Project Gutenberg</span></a>
+  </div>
+ </section>
+ <section id="tools">
+  <div class="section-head"><div><h2>Research &amp; Writing Tools</h2><p>Useful tools for planning, sourcing and documenting academic work.</p></div></div>
+  <div class="quicklinks">
+   <a class="quick" href="https://www.zotero.org/" target="_blank" rel="noopener"><span>✍️</span><span>Zotero Citations</span></a>
+   <a class="quick" href="https://scholar.google.com/" target="_blank" rel="noopener"><span>🔍</span><span>Literature Search</span></a>
+   <a class="quick" href="https://eric.ed.gov/" target="_blank" rel="noopener"><span>📑</span><span>Education Studies</span></a>
+   <a class="quick" href="https://www.crossref.org/" target="_blank" rel="noopener"><span>🧾</span><span>Crossref DOI Search</span></a>
+  </div>
+ </section>
+ <section id="quick">
+  <div class="section-head"><div><h2>Quick Links</h2><p>College and library portals.</p></div></div>
+  <div class="quicklinks">
+   <a class="quick" href="https://www.stjosephcte.in/" target="_blank" rel="noopener"><span>🏫</span><span>College Website</span></a>
+   <a class="quick" href="https://sites.google.com/view/sjctewlibrary/josephites-resource-hub" target="_blank" rel="noopener"><span>🧭</span><span>Josephites Resource Hub</span></a>
+   <a class="quick" href="https://sites.google.com/view/sjctewlibrary/josephites-resource-hub/question-papers" target="_blank" rel="noopener"><span>📝</span><span>Question Papers</span></a>
+   <a class="quick" href="https://sjcte-opac.kohasupport.in/" target="_blank" rel="noopener"><span>📇</span><span>Web OPAC</span></a>
+  </div>
+ </section>
+</main>
+<footer>
+ <div class="wrap"><strong>Research &amp; M.Ed Student Resource Hub</strong><p>St. Joseph College of Teacher Education for Women, Ernakulam</p><p>Prepared as a digital gateway to academic and research resources.</p></div>
+</footer>
+<script>
+(function(){
+ const search=document.getElementById('resourceSearch');
+ const filter=document.getElementById('categoryFilter');
+ const cards=Array.from(document.querySelectorAll('#resourceGrid .card'));
+ const noResults=document.getElementById('noResults');
+ function update(){
+  const q=search.value.trim().toLowerCase();
+  const cat=filter.value;
+  let count=0;
+  cards.forEach(card=>{
+   const text=(card.innerText+' '+(card.dataset.search||'')).toLowerCase();
+   const matchesText=!q||text.includes(q);
+   const matchesCat=cat==='all'||card.dataset.category===cat;
+   const show=matchesText&&matchesCat;
+   card.classList.toggle('hidden',!show);
+   if(show) count++;
+  });
+  noResults.style.display=count?'none':'block';
+ }
+ search.addEventListener('input',update);
+ filter.addEventListener('change',update);
+})();
+</script>
+</body>
+</html>
